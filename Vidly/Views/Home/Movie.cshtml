@@ -1,4 +1,5 @@
-﻿@model Vidly.Models.Movies
+﻿@using Vidly.Models
+@model Vidly.ViewModels.RandomMovieViewModel
 
 
 @{
@@ -7,5 +8,17 @@
 }
 
 
-<h2>@Model.Name</h2>
+@*<h2>@Model.Name</h2>*@
+@*<h2>@( ((Vidly.Models.Movies)ViewData["Movies"]).Name)</h2>*@
+<h2>@Model.Movies.Name</h2>
+    
+<ul class="card">
+  
+        @foreach (var customer in Model.Customers)
+        {
+            <li class="list-group-item">@customer.Name</li>
+        }
+   
+
+</ul>
 
